@@ -76,7 +76,7 @@
       scriptTag.setAttribute("src", url);
       document.head.appendChild(scriptTag);
     }
-    getAddr(yubin7: string, fn: Callback): CallbackResult {
+    getAddr(yubin7: string, fn: Callback): CallbackResult | void {
       const yubin3 = yubin7.substring(0, 3);
       // 郵便番号上位3桁でキャッシュデータを確認
       if (yubin3 in this.CACHE && yubin7 in this.CACHE[yubin3]) {
@@ -85,8 +85,8 @@
 
       this.jsonp(`${this.URL}/${yubin3}.js`, (data) => {
         this.CACHE[yubin3] = data;
+        return fn(this.selectAddr(data[yubin3][yubin7]));
       });
-      return fn(this.selectAddr(this.CACHE[yubin3][yubin7]));
     }
   }
 
