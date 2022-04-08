@@ -1,9 +1,8 @@
 {
-  "name": "yubinbango-core-ts",
+  "name": "@schoolynk/yubinbango-core-ts",
   "version": "0.1.0",
   "scripts": {
-    "build": "tsc",
-    "postinstall": "tsc"
+    "build": "tsc"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
