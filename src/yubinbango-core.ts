@@ -37,12 +37,14 @@
         const c:string = b!.join('');
         const yubin7: string | null = this.chk7(c);
         // 7桁の数字の時のみ作動
-        if (yubin7 && callback) {
+        if (!callback) return
+
+        if (yubin7) {
           this.getAddr(yubin7, callback);
           return
         }
 
-        if (callback) callback(this.addrDic());
+        callback(this.addrDic());
       }
     }
     chk7(val: string): string | null {
@@ -76,21 +78,18 @@
       scriptTag.setAttribute("src", url);
       document.head.appendChild(scriptTag);
     }
-    getAddr(yubin7: string, fn: Callback): CallbackResult | void {
+    getAddr(yubin7: string, fn: Callback): void {
       const yubin3 = yubin7.substring(0, 3);
       // 郵便番号上位3桁でキャッシュデータを確認
       if (yubin3 in this.CACHE && yubin7 in this.CACHE[yubin3]) {
-        return fn(this.selectAddr(this.CACHE[yubin3][yubin7]));
+        fn(this.selectAddr(this.CACHE[yubin3][yubin7]));
+        return
       }
 
       this.jsonp(`${this.URL}/${yubin3}.js`, (data) => {
         this.CACHE[yubin3] = data;
-        console.log(data);
-        console.log(yubin3)
-        console.log(yubin7)
         return fn(this.selectAddr(data[yubin7]));
       });
-      console.log(this.CACHE)
     }
   }
 
