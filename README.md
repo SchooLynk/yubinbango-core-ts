@@ -28,3 +28,8 @@ PR をマージ後、リリースされます。
 - [] test を記載する。
 - [] browser 依存ではなくする。
 - [] any 型を使っているところを修正する。
+
+# トラブルシューティング
+
+github-action内 github packages に release するために使用している `PACKAGE_CRUD_GITHUB_TOKEN` は @yoshixi のを使用しています。
+期限が切れて使えなくなる等あったら、`write:packages` `delete:packages` の権限がついている tokenをセットしてください。
