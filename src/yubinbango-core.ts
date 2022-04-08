@@ -85,8 +85,14 @@
 
       this.jsonp(`${this.URL}/${yubin3}.js`, (data) => {
         this.CACHE[yubin3] = data;
+        console.log(data);
+        console.log(data[yubin3])
+        console.log(data[yubin3][yubin7])
+        console.log(`yubin3 ${yubin3}`)
+        console.log(`yubin7 ${yubin7}`)
         return fn(this.selectAddr(data[yubin3][yubin7]));
       });
+      console.log(this.CACHE)
     }
   }
 
