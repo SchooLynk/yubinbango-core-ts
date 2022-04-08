@@ -5,10 +5,8 @@
     street: string,
     extended: string
   }
-  type CallbackResult = {
-    [key:string]: string
-  }
-  type Callback = (args: AddrDicResult) => CallbackResult;
+
+  type Callback = (args: AddrDicResult) => void;
 
   type Cache = {
     [key:string]: any; // Add index signature
