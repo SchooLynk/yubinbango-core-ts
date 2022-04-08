@@ -1,11 +1,20 @@
 {
   "name": "yubinbango-core-ts",
   "version": "0.1.0",
-  "main": "index.js",
-  "author": "Yoshiki Masubuchi",
   "scripts": {
     "build": "tsc"
   },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "author": "Yoshiki Masubuchi",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SchooLynk/yubinbango-core-ts"
+  },
+  "private": true,
   "license": "MIT",
   "devDependencies": {
     "typescript": "^4.6.3"
