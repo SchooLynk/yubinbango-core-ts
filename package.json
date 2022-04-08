@@ -1,6 +1,6 @@
 {
   "name": "@schoolynk/yubinbango-core-ts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "scripts": {
     "build": "tsc",
     "prepare": "tsc"
@@ -17,7 +17,7 @@
     "lint-fix": "eslint --fix './src/**/*.{js,ts}' && prettier --write './src/**/*.{js,ts}'"
   },
   "publishConfig": {
-    "@schoolynk/registry": "https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com/schoolynk"
   },
   "private": false,
   "license": "MIT",
