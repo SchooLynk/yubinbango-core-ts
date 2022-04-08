@@ -12,11 +12,17 @@
   "author": "Yoshiki Masubuchi",
   "repository": {
     "type": "git",
-    "url": "https://github.com/SchooLynk/yubinbango-core-ts"
+    "url": "https://github.com/SchooLynk/yubinbango-core-ts",
+    "lint-fix": "eslint --fix './src/**/*.{js,ts}' && prettier --write './src/**/*.{js,ts}'"
   },
   "private": true,
   "license": "MIT",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.18.0",
+    "@typescript-eslint/parser": "^5.18.0",
+    "eslint": "^8.12.0",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "^2.6.2",
     "typescript": "^4.6.3"
   }
 }
