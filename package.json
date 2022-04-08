@@ -1,0 +1,13 @@
+{
+  "name": "yubinbango-core-ts",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "Yoshiki Masubuchi",
+  "scripts": {
+    "build": "tsc"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.6.3"
+  }
+}
